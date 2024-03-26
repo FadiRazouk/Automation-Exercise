@@ -1,0 +1,21 @@
+{
+  "name": "Automation-Exercise",
+  "version": "1.0.0",
+  "dependencies": {
+    "@types/node": "^20.10.1",
+    "cypress": "13.7.1",
+    "cypress-mochawesome-reporter": "^3.7.0",
+    "cypress-parallel": "^0.14.0"
+  },
+  "scripts": {
+    "cypress:test-headless": "cypress run --browser chrome --headless",
+    "cypress:gui": "cypress run --browser chrome --no-exit",
+    "cy:run": "cypress run --browser chrome --headless",
+    "cy:parallel": "cypress-parallel -s cy:run -t 2 -d 'cypress/e2e/*.cy.js'"
+  },
+  "author": "Fadi Razouk",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress-delete-downloads-folder": "^0.0.4"
+  }
+}

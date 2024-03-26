@@ -1,0 +1,41 @@
+# name: End-to-end tests
+# on: pull_request
+# jobs:
+#   cypress-run:
+#     runs-on: ubuntu-22.04
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+#       - name: Cypress run
+#         uses: cypress-io/github-action@v6
+
+name: "Sanity"
+on:
+  pull_request
+jobs:
+  runTests:
+    name: Cypress run
+    runs-on: ubuntu-latest
+    timeout-minutes: 280
+    strategy:
+      # when one test fails, DO NOT cancel the other
+      fail-fast: false
+      matrix:
+        # run 2 copies of the current job in parallel
+        containers: [1, 2]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      # - name: Install packages
+      #   run: npm i
+      #   timeout-minutes: 2
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          record: true
+          parallel: true
+          browser: chrome
+          group: 'Actions example'
+        env:
+          CYPRESS_RECORD_KEY: "6ad9b8f4-8243-4ea0-a1c3-2f18f434af25"
+          CYPRESS_PROJECT_ID: "qsxt94"
