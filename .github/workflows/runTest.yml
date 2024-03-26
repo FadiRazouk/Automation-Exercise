@@ -32,7 +32,7 @@ jobs:
         with:
           record: true
           parallel: true
-          browser: chrome
+          browser: firefox
           group: 'Actions example'
         env:
           CYPRESS_RECORD_KEY: "6ad9b8f4-8243-4ea0-a1c3-2f18f434af25"
