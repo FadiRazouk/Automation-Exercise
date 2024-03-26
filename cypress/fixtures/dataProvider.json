@@ -1,0 +1,23 @@
+{
+    "APIs": {
+      "addToCart": "/add_to_cart/*"
+    },
+    "labels": {
+      "emptyCart": "Cart is empty!",
+      "orderConfirmationMessage":"Congratulations! Your order has been confirmed!",
+      "unregisteredUserMessage":"Register / Login account to proceed on checkout.",
+      "cardHolderName": "username",
+      "cardNumber": "6703 4444 4444 4449",
+      "cvcNumber": "123",
+      "expiryMonth": "12",
+      "expiryYear": "2030",
+      "allProductLabel": "All Products"
+    },
+
+    "products":{
+      "blueColor": "blue",
+      "womenDress":"Women - Dress Products",
+      "menTshirt":"Men - Tshirts Products",
+      "brandPolo":"Brand - Polo Products"
+    }
+}
